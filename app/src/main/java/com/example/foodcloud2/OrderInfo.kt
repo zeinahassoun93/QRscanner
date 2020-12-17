@@ -1,8 +1,10 @@
 package com.example.foodcloud2
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 import androidx.recyclerview.widget.RecyclerView
@@ -20,19 +22,20 @@ class OrderInfo : AppCompatActivity() {
     lateinit var result:String
     lateinit var phonenumber:String
     lateinit var saved:String
-    lateinit var recyclerview:RecyclerView
-    lateinit var list:ArrayList<Cart>
+    lateinit var infobtn:Button
+    lateinit var ID:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_info)
-        id=findViewById(R.id.order_id)
+
         date=findViewById(R.id.order_date)
         time=findViewById(R.id.order_time)
         amount=findViewById(R.id.order_amount)
-        recyclerview = findViewById(R.id.rv)
-        // result= intent.getStringExtra("SCAN_RESULT").toString()
-       result="c209fa8e-2475-4a60-9681-2385d7ab3fd1+96176675755"
+        infobtn=findViewById(R.id.info_btn)
+         result= intent.getStringExtra("RESULT").toString()
+        ID=result.take(36)
+       //result="c209fa8e-2475-4a60-9681-2385d7ab3fd1+96176675755"
         phonenumber=result.takeLast(12)
 
         val database = FirebaseDatabase.getInstance()
@@ -47,9 +50,7 @@ class OrderInfo : AppCompatActivity() {
                         time.text=order.time
                         amount.text = order.totalAmount
                         saved=order.itemID
-                       // id.text=order.itemID
-                        //arrayItems= arrayOf(order.itemID)
-                       // id.text=arrayItems[1]
+
                     }
                 }
             }
@@ -58,30 +59,13 @@ class OrderInfo : AppCompatActivity() {
 
             }
         })
-
-        val itemRef= database.reference.child("Cart List").child("Admin View").child(phonenumber).child("Item")
-        itemRef.addValueEventListener(object: ValueEventListener{
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if(dataSnapshot.exists()){
-                    list = arrayListOf()
-                    for(postSnapshot in dataSnapshot.children){
-                        val item: Cart = postSnapshot.getValue(Cart::class.java)!!
-                        if(saved.contains(item.iid)){
-                            list.add(item)
-                        }}
-                    val adapterClass = AdapterClass(list)
-                    recyclerview.adapter = adapterClass
-
-                }
-
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-
-            }
-        })
-
-
+infobtn.setOnClickListener {
+    val intent = Intent(this, ItemDetails::class.java)
+    intent.putExtra("ID",ID)
+    intent.putExtra("SAVED", saved)
+    intent.putExtra("PHONE",phonenumber)
+    startActivity(intent)
+}
     }
 
 }

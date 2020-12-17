@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderInfo"
-    android:background="#fbeddc">
+    android:background="#fbeddc"
+    tools:context=".OrderInfo">
+
 
     <TextView
         android:id="@+id/textView3"
@@ -15,10 +16,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="594dp"
         android:gravity="center_horizontal"
         android:text="Order Details"
         android:textColor="@color/colorPrimaryDark"
@@ -27,8 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
-
+        app:layout_constraintVertical_bias="0.157" />
 
     <TextView
         android:id="@+id/order_date"
@@ -39,124 +35,80 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="172dp"
         android:layout_marginEnd="128dp"
+        android:layout_marginTop="172dp"
+
         android:layout_marginBottom="529dp"
         android:gravity="center_horizontal"
         android:text="Date"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/order_time"
-        android:layout_width="161dp"
-        android:layout_height="38dp"
+        android:layout_width="165dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="123dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginTop="211dp"
-        android:layout_marginEnd="126dp"
         android:layout_marginBottom="482dp"
         android:gravity="center_horizontal"
         android:text="Time"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/order_amount"
-        android:layout_width="163dp"
-        android:layout_height="41dp"
+        android:layout_width="165dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="125dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginTop="273dp"
-        android:layout_marginEnd="123dp"
         android:layout_marginBottom="417dp"
         android:gravity="center_horizontal"
         android:text="Amount"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/order_id"
-        android:layout_width="371dp"
-        android:layout_height="38dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="318dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="375dp"
-        android:gravity="center_horizontal"
-        android:text="TextView"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
+
 
     <Button
-        android:id="@+id/order_received"
-        android:layout_width="313dp"
-        android:layout_height="39dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="664dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="29dp"
+        android:id="@+id/info_btn"
         android:background="@color/colorPrimaryDark"
-        android:text="Press if the order is received"
-        android:textColor="#fbeddc"
+        android:textColor="#ffffff"
+        android:layout_width="277dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginEnd="128dp"
+        android:text="Press to know order items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="wrap_content"
-        android:layout_height="288dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="367dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="76dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945"
-        tools:ignore="MissingConstraints"></androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

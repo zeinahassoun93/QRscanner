@@ -34,6 +34,6 @@ class AdapterClass(private val list: ArrayList<Cart>): RecyclerView.Adapter<Adap
         holder.time.text=list[position].time
         holder.name.text = list[position].itemName
         holder.category.text = list[position].itemCategory
-        holder.qt.text = "Quantity: ".plus(list[position].quantity.toString())
+        holder.qt.text = "Quantity: ".plus(list[position].quantity)
     }
 }

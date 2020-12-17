@@ -41,6 +41,7 @@ class Qrscan : AppCompatActivity() {
                 var result:String=it.text
                 Toast.makeText(this, result,
                     Toast.LENGTH_LONG).show()
+                intent.putExtra("RESULT", result)
                 startActivity(intent)
             }
         }
