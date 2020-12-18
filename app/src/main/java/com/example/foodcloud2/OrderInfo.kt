@@ -35,7 +35,6 @@ class OrderInfo : AppCompatActivity() {
         infobtn=findViewById(R.id.info_btn)
          result= intent.getStringExtra("RESULT").toString()
         ID=result.take(36)
-       //result="c209fa8e-2475-4a60-9681-2385d7ab3fd1+96176675755"
         phonenumber=result.takeLast(12)
 
         val database = FirebaseDatabase.getInstance()
@@ -46,9 +45,9 @@ class OrderInfo : AppCompatActivity() {
                 for(postSnapshot in dataSnapshot.children){
                     val order:Order= postSnapshot.getValue(Order::class.java)!!
                     if(order.key==result.take(36)){
-                        date.text=order.date
-                        time.text=order.time
-                        amount.text = order.totalAmount
+                        date.text="Date: " + order.date
+                        time.text="Time: " + order.time
+                        amount.text = "Total Amount: "+ order.totalAmount
                         saved=order.itemID
 
                     }

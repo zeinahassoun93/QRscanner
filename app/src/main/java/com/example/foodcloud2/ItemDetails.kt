@@ -52,12 +52,13 @@ class ItemDetails : AppCompatActivity() {
             }
 
             override fun onCancelled(p0: DatabaseError) {
-                Toast.makeText(applicationContext,"ERRROOOORRRR",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"error",Toast.LENGTH_SHORT).show()
             }
         })
     received.setOnClickListener {
     val orderRef= database.reference.child("Orders").child(phonenb).child(ID).child("redeemed")
     orderRef.setValue("true")
+     Toast.makeText(this, "The order has been successfully redeemed", Toast.LENGTH_LONG).show()
 
 }
 

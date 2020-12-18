@@ -27,7 +27,6 @@ class Qrscan : AppCompatActivity() {
         // Parameters (default values)
         codeScanner.camera = CodeScanner.CAMERA_BACK // or CAMERA_FRONT or specific camera id
         codeScanner.formats = CodeScanner.ALL_FORMATS // list of type BarcodeFormat,
-        // ex. listOf(BarcodeFormat.QR_CODE)
         codeScanner.autoFocusMode = AutoFocusMode.SAFE // or CONTINUOUS
         codeScanner.scanMode = ScanMode.SINGLE // or CONTINUOUS or PREVIEW
         codeScanner.isAutoFocusEnabled = true // Whether to enable auto focus or not
@@ -36,11 +35,9 @@ class Qrscan : AppCompatActivity() {
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, "Done", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Scanned", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, OrderInfo::class.java)
                 var result:String=it.text
-                Toast.makeText(this, result,
-                    Toast.LENGTH_LONG).show()
                 intent.putExtra("RESULT", result)
                 startActivity(intent)
             }
