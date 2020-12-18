@@ -25,11 +25,10 @@ class ItemDetails : AppCompatActivity() {
         setContentView(R.layout.activity_item_details)
         recyclerView=findViewById(R.id.rv)
         received=findViewById(R.id.received_btn)
-       saved=intent.getStringExtra("SAVED").toString()
+        saved=intent.getStringExtra("SAVED").toString()
         phonenb=intent.getStringExtra("PHONE").toString()
         ID=intent.getStringExtra("ID").toString()
-        //saved="[feaf2cfc-327d-47c7-9ceb-6fddf8581834]"
-        //phonenb="+96171350411"
+
 
         val database = FirebaseDatabase.getInstance()
         val itemRef= database.reference.child("Cart List").child("Admin View").child(phonenb).child("Item")
