@@ -18,11 +18,11 @@ class LoginActivity : AppCompatActivity() {
     lateinit var database: FirebaseDatabase
     internal lateinit var mFirebaseAuth: FirebaseAuth
     lateinit var ref: DatabaseReference
-    lateinit var errorText:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        errorText=findViewById(R.id.errortext)
+
         username = findViewById(R.id.username)
         password = findViewById(R.id.password)
         mFirebaseAuth = FirebaseAuth.getInstance()
@@ -46,10 +46,8 @@ class LoginActivity : AppCompatActivity() {
                             var User = postSnapshot.getValue(User::class.java)
                             if(User!=null && User.Username == user && User.Password == pwd.md5()){
                                 startActivity(Intent(this@LoginActivity, Qrscan::class.java))
+
                                 Toast.makeText(this@LoginActivity, "Signed in", Toast.LENGTH_SHORT).show()
-                            }
-                            if(User!=null && (user!=User.Username || pwd.md5()!= User?.Password)){
-                                errorText.text="* Incorrect username or password."
                             }
 
 
